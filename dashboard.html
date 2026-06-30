@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - DevPortfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">🚀 DevPortfolio</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Dashboard -->
+    <div class="dashboard-container" id="dashboard-container">
+        <div class="dashboard-header">
+            <h1>Dashboard</h1>
+            <button class="btn btn-primary" onclick="createNewPost()">+ New Post</button>
+        </div>
+
+        <!-- Post Form -->
+        <div class="post-form" id="postForm" style="display:none;">
+            <h3>Create New Post</h3>
+            <input type="text" id="postTitle" placeholder="Post Title" class="form-input">
+            <input type="text" id="postTags" placeholder="Tags (comma separated)" class="form-input">
+            <textarea id="postContent" rows="10" placeholder="Write your post in Markdown..." class="form-textarea"></textarea>
+            <button class="btn btn-success" onclick="savePost()">Publish Post</button>
+            <button class="btn btn-danger" onclick="cancelPost()">Cancel</button>
+        </div>
+
+        <!-- Posts List -->
+        <div class="posts-list">
+            <h3>Your Posts</h3>
+            <div id="postsContainer">
+                <p class="loading-text">Loading your posts...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-analytics-compat.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
